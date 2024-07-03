@@ -37,6 +37,11 @@ namespace prueba_tecnica
             }
         }
 
+        private async void DeleteNoteButton_Click(object sender, RoutedEventArgs e)
+        {
+            await DeleteNote();
+        }
+
         private async Task SaveNote(string text)
         {
             try
@@ -60,5 +65,26 @@ namespace prueba_tecnica
                 }
             }
         }
+
+        private async Task DeleteNote()
+        {
+            try
+            {
+                HttpResponseMessage response = await client.DeleteAsync($"{url}/delete");
+                if (response.IsSuccessStatusCode)
+                {
+                    MessageBox.Show("Notas eliminadas correctamente");
+                }
+                else
+                {
+                    MessageBox.Show($"Error al eliminar las notas: {response.StatusCode}");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
     }
 }
