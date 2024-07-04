@@ -10,8 +10,8 @@
         <StackPanel Margin="10" MaxWidth="600">
             <TextBox x:Name="TextInput"  HorizontalAlignment="Left" Margin="20,20,0,0" TextWrapping="Wrap" Text="" Width="332"/>
             <Button x:Name="SaveNoteButton" Content="Guardar nota" HorizontalAlignment="Left" Margin="20,10,0,0" RenderTransformOrigin="-1.264,1.826" Click="SaveNoteButton_Click" Width="93"/>
-            <Button x:Name="ReadNoteButton" Content="Leer nota" HorizontalAlignment="Left" Margin="130,-20,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.345,0.439" Click="ReadNoteButton_Click"/>
-            <Button x:Name="DeleteNoteButton" Content="Borrar nota" HorizontalAlignment="Left" Margin="200,-20,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.345,0.439" Click="DeleteNoteButton_Click"/>
+            <Button x:Name="ReadNoteButton" Content="Leer nota" HorizontalAlignment="Left" Margin="140,-20,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.345,0.439" Click="ReadNoteButton_Click" Width="93"/>
+            <Button x:Name="DeleteNoteButton" Content="Borrar nota" HorizontalAlignment="Left" Margin="258,-20,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.345,0.439" Click="DeleteNoteButton_Click" Width="93"/>
             <StackPanel x:Name="LabelContainer" Orientation="Vertical" Margin="20,20,0,0"/>
         </StackPanel>
     </Grid>

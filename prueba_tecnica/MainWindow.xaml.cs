@@ -58,7 +58,7 @@ namespace prueba_tecnica
             catch (Exception ex)
             {
                 {
-                    MessageBox.Show(ex.Message);
+                    MessageBox.Show("Servicio no disponible. Inténtelo más tarde", "Error");
                 }
             }
         }
@@ -79,7 +79,7 @@ namespace prueba_tecnica
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Servicio no disponible. Inténtelo más tarde", "Error");
             }
         }
 
@@ -91,7 +91,7 @@ namespace prueba_tecnica
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show("Servicio no disponible. Inténtelo más tarde", "Error");
                 return new List<string>();
             }
         }
