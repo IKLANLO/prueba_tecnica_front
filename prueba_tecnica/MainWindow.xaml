@@ -6,11 +6,13 @@
         xmlns:local="clr-namespace:prueba_tecnica"
         mc:Ignorable="d"
         Title="Prueba técnica" Height="450" Width="800">
-    <Grid Margin="0,-42,0,0">
-        <Button x:Name="SaveNoteButton" Content="Guardar nota" HorizontalAlignment="Left" Margin="23,87,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.264,1.826" Click="SaveNoteButton_Click"/>
-        <Button x:Name="ReadNoteButton" Content="Leer nota" HorizontalAlignment="Left" Margin="101,87,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.345,0.439"/>
-        <Button x:Name="DeleteNoteButton" Content="Borrar nota" HorizontalAlignment="Left" Margin="159,87,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.345,0.439" Click="DeleteNoteButton_Click"/>
-        <TextBox x:Name="TextInput" HorizontalAlignment="Left" Margin="23,60,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="332"/>
-        <Label Content="" HorizontalAlignment="Left" Margin="23,112,0,0" VerticalAlignment="Top" Width="332" Height="28"/>
+    <Grid>
+        <StackPanel Margin="10">
+            <TextBox x:Name="TextInput" HorizontalAlignment="Left" Margin="20,20,0,0" TextWrapping="Wrap" Text="" Width="332"/>
+            <Button x:Name="SaveNoteButton" Content="Guardar nota" HorizontalAlignment="Left" Margin="20,10,0,0" RenderTransformOrigin="-1.264,1.826" Click="SaveNoteButton_Click" Width="93"/>
+            <Button x:Name="ReadNoteButton" Content="Leer nota" HorizontalAlignment="Left" Margin="130,-20,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.345,0.439" Click="ReadNoteButton_Click"/>
+            <Button x:Name="DeleteNoteButton" Content="Borrar nota" HorizontalAlignment="Left" Margin="200,-20,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.345,0.439" Click="DeleteNoteButton_Click"/>
+            <StackPanel x:Name="LabelContainer" Orientation="Vertical" Margin="20,20,0,0"/>
+        </StackPanel>
     </Grid>
 </Window>

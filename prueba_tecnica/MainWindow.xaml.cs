@@ -2,6 +2,7 @@
 using System.Text;
 using System.Net.Http;
 using System.Net.Http.Json;
+using System.Windows.Controls;
 ///using System.Threading.Tasks;
 
 /* using System.Windows.Controls;
@@ -40,6 +41,13 @@ namespace prueba_tecnica
         private async void DeleteNoteButton_Click(object sender, RoutedEventArgs e)
         {
             await DeleteNote();
+        }
+
+        private async void ReadNoteButton_Click(object sender, RoutedEventArgs e)
+        {
+            var notes = await ReadNote();
+            RenderNotes(notes);
+            
         }
 
         private async Task SaveNote(string text)
@@ -86,5 +94,32 @@ namespace prueba_tecnica
             }
         }
 
+        private async Task<List<String>> ReadNote()
+        {
+            try
+            {
+                ///var notes = await client.GetStringAsync($"{url}/read");
+                ///return notes;
+                return await client.GetFromJsonAsync<List<String>>($"{url}/read");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return new List<string>();
+            }
+        }
+
+        private void RenderNotes(List<String> notes)
+        {
+            LabelContainer.Children.Clear();
+            foreach (var item in notes)
+            {
+                Label newLabel = new Label { Content = item, Margin = new Thickness(1) };
+                LabelContainer.Children.Add(newLabel);
+
+            }
+
+        }
+        
     }
 }
