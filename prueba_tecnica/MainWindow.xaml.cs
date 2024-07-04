@@ -3,22 +3,9 @@ using System.Text;
 using System.Net.Http;
 using System.Net.Http.Json;
 using System.Windows.Controls;
-///using System.Threading.Tasks;
-
-/* using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes; */
 
 namespace prueba_tecnica
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         private static readonly HttpClient client = new HttpClient();
@@ -35,12 +22,14 @@ namespace prueba_tecnica
             if (!string.IsNullOrEmpty(text))
             {
                 await SaveNote(text);
-            }
+                TextInput.Text = string.Empty;
+            }   
         }
 
         private async void DeleteNoteButton_Click(object sender, RoutedEventArgs e)
         {
             await DeleteNote();
+            LabelContainer.Children.Clear();
         }
 
         private async void ReadNoteButton_Click(object sender, RoutedEventArgs e)
@@ -98,8 +87,6 @@ namespace prueba_tecnica
         {
             try
             {
-                ///var notes = await client.GetStringAsync($"{url}/read");
-                ///return notes;
                 return await client.GetFromJsonAsync<List<String>>($"{url}/read");
             }
             catch (Exception ex)
@@ -114,7 +101,17 @@ namespace prueba_tecnica
             LabelContainer.Children.Clear();
             foreach (var item in notes)
             {
-                Label newLabel = new Label { Content = item, Margin = new Thickness(1) };
+                Label newLabel = new Label { 
+                    Content = new TextBlock
+                    {
+                        Text = item,
+                        MaxWidth = 600,
+                        VerticalAlignment = VerticalAlignment.Top,
+                        TextWrapping = TextWrapping.Wrap,
+
+                    }, 
+                    Margin = new Thickness(1) 
+                };
                 LabelContainer.Children.Add(newLabel);
 
             }
