@@ -40,3 +40,7 @@ Tras pulsar _Borrar nota_ aparecerá un cuadro de confirmación informando de el
 ![borrar_nota_1](https://github.com/IKLANLO/prueba_tecnica_front/assets/143275701/5eb5b5f1-81b4-4bda-b520-73af1e639777)
 
 ![borrar_nota_2](https://github.com/IKLANLO/prueba_tecnica_front/assets/143275701/05258f4c-37cf-4af0-a4eb-4c85b2550dc5)
+
+### Error en el servicio
+
+![error](https://github.com/IKLANLO/prueba_tecnica_front/assets/143275701/3f5b9d03-4bb2-4ffd-9c85-507b0cc8077f)
